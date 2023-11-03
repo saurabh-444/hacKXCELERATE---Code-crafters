@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meal Finder</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <link rel = "stylesheet" href = "/Styles/meal.css">
+  <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackXcelerate</title>
+    <link rel="stylesheet" href="/Styles/meal.css"> <!-- Link to your CSS file for styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HackXcelerate</title>
+        <link rel="stylesheet" href="/Styles/meal.css"> <!-- Link to your CSS file for styling -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+
+        <script>
+          window.addEventListener('scroll', function() {
+          var header = document.querySelector('.header');
+          var menu = document.querySelector('.menu');
+          var scrollPosition = window.scrollY;
+      
+          if (scrollPosition > 0) {
+              header.classList.add('fixed-header');
+              menu.classList.add('fixed-menu');
+          } else {
+              header.classList.remove('fixed-header');
+              menu.classList.remove('fixed-menu');
+          }
+      });
+      
+      </script>
+        <style>
+            /* Reset some default browser styles */
+    body, h1, h2, p {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    
+        
+    
+    /* Style the header */
+    .header {
+        background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMhLNt1lSKPVrBb_11qTm9AE6KEiqvEeU1yzNQaeG539DyrjwsB04SeQQRp2Hv5JQ_cA&usqp=CAU') center/cover no-repeat;
+        color: #fff;
+        text-align: center;
+        padding: 50px 0;
+      
+        border-bottom: #0c0606 solid 2px;
+       
+        height: auto;
+    }
+    
+    .poster {
+        text-align: center;
+        overflow: hidden;
+        background: url('https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c2xpZGUlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60') center/cover no-repeat;
+        height: 1800px; /* Adjust the height as needed */
+    }
+    
+    .poster img {
+        display: none; /* Hide the img element */
+    }
+    
+    .poster-1{
+        text-align: center;
+        overflow: hidden;
+        width: 100%;
+    }
+    
+    .poster-1 img{
+        width: 100%;
+        height: 400px;
+    }
+    
+    /* Style the menu bar */
+    .menu {
+        background-color: #14213d;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+        border-bottom: #0c0606 solid 2px;
+    }
+    
+    .menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    
+    
+    .menu a {
+        text-decoration: none;
+        /* border-right: #0d169f solid 1px;
+        border-left: #0d169f solid 1px; */
+        color: #fff;
+        font-weight: bold;
+        padding: 10px 20px;
+        display: block;
+        transition: color 0.3s;
+    }
+    
+    .menu a:hover {
+        color: #010406;
+    }
+    
+    /* Style the poster image */
+    .poster {
+        text-align: center;
+        overflow: hidden;
+    }
+    
+    .poster img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.3s;
+    }
+
+  footer{
+    position: relative;
+    bottom: 0;
+     background-color: #14213d ;
+     width: 100%;
+     min-height: 150px;
+     padding: 3rem 1rem;
+     border-top: #010406 solid;
+     padding-bottom: 20px;
+    
+}
+.container {
+    max-width: 1140px;
+    max-height: 150px;
+    margin: 0 auto;
+    
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.col{
+    min-width: 250px;
+    color:#f2f2f2f2;
+    font-family: poppins;
+    padding:0 2rem;
+}
+.col .logo{
+    width: 100px;
+    margin-bottom:25px;
+}
+.col h3{
+    color:#CD7F32;
+    margin-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+}
+.col h3::after{
+    content: '';
+    height:3px;
+    width:0px;
+    background-color: #CD7F32;
+    position: absolute;
+    bottom: 0;
+    left:0;
+    transition: 0.3s ease;
+
+}
+.col h3:hover::after{
+    width:30px
+}
+
+.social{
+    align-items:end;
+}
+.social a i{
+    color:#CD7F32;
+    margin-top: 5px;
+    margin-left: 100px;
+    transition: 0.3s ease;
+    display: inline-block;
+}
+.social a i:hover{
+    transform: scale(1.5);
+    filter:grayscale(25);
+}
+
+.col .links a{
+    display: block;
+    text-decoration: none;
+    color:#f2f2f2;
+    margin-bottom: 5px;
+    position: relative;
+    transition: 0.3s ease;
+}
+.col .links a::before{
+    content:'';
+    height: 16px;
+    width:3px;
+    position: absolute;
+    top:5px;
+    left:-10px;
+    background-color: rgb(5, 3, 4);
+    transition: 0.5s ease;
+    opacity: 0;
+}
+.col .links a:hover::before{
+    opacity: 1;
+}
+.col .links a:hover{
+    transform: translateX(-8px);
+    color:#CD7F32;
+}
+.col .contact-details{
+    display: inline-flex;
+    justify-content: space-between;
+}
+.col .contact-details i{
+    margin-right:15px;
+}
+
+        </style>
+</head>
+
+
+<body>
+  <header class="header">
+    <div class="header-content">
+        <h1>Welcome to HackXcelerate </h1>
+        <p>Your Comprehensive Support System</p>
+    </div>
+  </header>
+  <nav class="menu">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="financial.html">Finance Guide</a></li>
+        <li><a href="student.html">Student Help</a></li>
+        <li><a href="women.html">Women Empowerment</a></li>
+        <li><a href="health.html">Health and Fitness</a></li>
+        <li><a href="other.html">Other</a></li>
+        <!-- Add more menu items as needed -->
+    </ul>
+</nav>
+
+  <div class = "container">
+    <div class = "meal-wrapper">
+      <div class = "meal-search">
+        <h2 class = "title">Find Meals For Your Ingredients</h2>
+        <blockquote><br>
+          <cite></cite>
+        </blockquote>
+
+        <div class = "meal-search-box">
+          <input type = "text" class = "search-control" placeholder="Enter an ingredient" id = "search-input">
+          <button type = "submit" class = "search-btn btn" id = "search-btn">
+            <i class = "fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class = "meal-result">
+        <h2 class = "title">Your Search Results:</h2>
+        <div id= "meal">
+          
+        </div>
+      </div>
+
+
+      <div class = "meal-details">
+        <!-- recipe close btn -->
+        <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn">
+          <i class = "fas fa-times"></i>
+        </button>
+
+        <!-- meal content -->
+        <div class = "meal-details-content">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src = "/script/meal.js"></script>
+
+  <script>
+    const searchBtn = document.getElementById('search-btn');
+const mealList = document.getElementById('meal');
+const mealDetailsContent = document.querySelector('.meal-details-content');
+const recipeCloseBtn = document.getElementById('recipe-close-btn');
+
+// event listeners
+searchBtn.addEventListener('click', getMealList);
+mealList.addEventListener('click', getMealRecipe);
+recipeCloseBtn.addEventListener('click', () => {
+    mealDetailsContent.parentElement.classList.remove('showRecipe');
+});
+
+ 
+// get meal list that matches with the ingredients
+function getMealList(){
+    let searchInputTxt = document.getElementById('search-input').value.trim();
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputTxt}`)
+    .then(response => response.json())
+    .then(data => {
+        let html = "";
+        if(data.meals){
+            data.meals.forEach(meal => {
+                html += `
+                    <div class = "meal-item" data-id = "${meal.idMeal}">
+                        <div class = "meal-img">
+                            <img src = "${meal.strMealThumb}" alt = "food">
+                        </div>
+                        <div class = "meal-name">
+                            <h3>${meal.strMeal}</h3>
+                            <a href = "#" class = "recipe-btn">Get Recipe</a>
+                        </div>
+                    </div>
+                `;
+            });
+            mealList.classList.remove('notFound');
+        } else{
+            html = "Sorry, we didn't find any meal!";
+            mealList.classList.add('notFound');
+        }
+
+        mealList.innerHTML = html;
+    });
+}
+
+
+// get recipe of the meal
+function getMealRecipe(e){
+    e.preventDefault();
+    if(e.target.classList.contains('recipe-btn')){
+        let mealItem = e.target.parentElement.parentElement;
+        fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.id}`)
+        .then(response => response.json())
+        .then(data => mealRecipeModal(data.meals));
+    }
+}
+
+// create a modal
+function mealRecipeModal(meal){
+    console.log(meal);
+    meal = meal[0];
+    let html = `
+        <h2 class = "recipe-title">${meal.strMeal}</h2>
+        <p class = "recipe-category">${meal.strCategory}</p>
+        <div class = "recipe-instruct">
+            <h3>Instructions:</h3>
+            <p>${meal.strInstructions}</p>
+        </div>
+        <div class = "recipe-meal-img">
+            <img src = "${meal.strMealThumb}" alt = "">
+        </div>
+        <div class = "recipe-link">
+            <a href = "${meal.strYoutube}" target = "_blank">Watch Video</a>
+        </div>
+    `;
+    mealDetailsContent.innerHTML = html;
+    mealDetailsContent.parentElement.classList.add('showRecipe');
+}
+  </script>
+
+
+
+</body>
+</html>

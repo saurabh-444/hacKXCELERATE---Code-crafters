@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TECHIFY</title>
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <!-- aos css -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- custom stylesheet -->
+    <link rel="stylesheet" href="/Styles/scholarship.css" />
+
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/9b54928ef1.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+        </script>
+        <script>
+            window.addEventListener('scroll', function() {
+            var header = document.querySelector('.header');
+            var menu = document.querySelector('.menu');
+            var scrollPosition = window.scrollY;
+        
+            if (scrollPosition > 0) {
+                header.classList.add('fixed-header');
+                menu.classList.add('fixed-menu');
+            } else {
+                header.classList.remove('fixed-header');
+                menu.classList.remove('fixed-menu');
+            }
+        });
+        
+        </script>
+        </head>
+        <body>
+            <header class="header">
+                <div class="header-content">
+                    <h1>Welcome to HackXcelerate </h1>
+                    <p>Your Comprehensive Support System</p>
+                </div>
+              </header>
+              <nav class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="financial.html">Finance Guide</a></li>
+                    <li><a href="student.html">Student Help</a></li>
+                    <li><a href="women.html">Women Empowerment</a></li>
+                    <li><a href="health.html">Health and Fitness</a></li>
+                    <li><a href="other.html">Other</a></li>
+                    <!-- Add more menu items as needed -->
+                </ul>
+            </nav>
+
+        <section id="jobs">
+            <div class="container">
+                <h1>Job opportunities</h1>
+                <ul>
+                    <li><a target="_blank" href="https://www.jobsforher.com/">JOBS FOR HER ↗️</a></li>
+                    <li>
+                        <a target="_blank" href="https://powertofly.com/">POWER TO FLY ↗️</a>
+                    </li>
+                    <li><a target="_blank" href="https://jobspresso.co/">JOBSPRESSO ↗️</a></li>
+                    <li>
+                        <a target="_blank" href="https://www.theswingshift.co/">THE SWING SHIFT ↗️</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.chargebee.com/careers/women-in-tech/">CHARGEBEE ↗️</a>
+                    </li>
+                    <li><a target="_blank" href="https://themomproject.com/">THE MOM PROJECT ↗️</a></li>
+                    <li>
+                        <a target="_blank" href="https://www.creativecircle.com/">CREATIVE CIRCLE ↗️</a>
+                    </li>
+                    <li><a target="_blank" href="https://www.flexjobs.com/">FLEX JOBS ↗️</a></li>
+                    <li><a target="_blank" href="https://justremote.co/">JUST REMOTE ↗️</a></li>
+                </ul>
+            </div>
+        </section>
+    
+        
+    </body>
+    
+    </html>

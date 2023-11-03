@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackXcelerate</title>
+    <link rel="stylesheet" href="/Styles/other.css"> <!-- Link to your CSS file for styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    
+    <header class="header">
+        <div class="header-content">
+            <h1>Welcome to HackXcelerate </h1>
+            <p>Your Comprehensive Support System</p>
+        </div>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="financial.html">Finance Guide</a></li>
+                <li><a href="student.html">Student Help</a></li>
+                <li><a href="women.html">Women Empowerment</a></li>
+                <li><a href="health.html">Health and Fitness</a></li>
+                <li><a href="other.html">Other</a></li>
+                <!-- Add more menu items as needed -->
+            </ul>
+        </nav>
+    </header>
+
+    
+   
+
+<div class="card-container">
+    <article class="card">
+      <img
+        class="card__background"
+        src="/images/other1.jpg"
+        alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
+        width="1920"
+        height="2193"
+      />
+      <div class="card__content | flow">
+        <div class="card__content--container | flow">
+          <h2 class="card__title">Sport</h2>
+          <p class="card__description">
+            Witness the world's most popular sport in action and become a part of the football family.
+          </p>
+        </div>
+        <button class="card__button"><a href="sports.html">Read more</a></button>
+      </div>
+    </article>
+    <article class="card">
+      <img
+        class="card__background"
+        src="/images/other2.jpg"
+        alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
+        width="1920"
+        height="2193"
+      />
+      <div class="card__content | flow">
+        <div class="card__content--container | flow">
+          <h2 class="card__title">News</h2>
+          <p class="card__description">
+            Stay informed and up-to-date with the latest headlines and breaking news.
+          </p>
+        </div>
+        <button class="card__button"><a href="news.html">Read more</a></button>
+      </div>
+    </article>
+    <article class="card">
+        <img
+          class="card__background"
+          src="/images/other3.jpg"
+          alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
+          width="1920"
+          height="2193"
+        />
+        <div class="card__content | flow">
+          <div class="card__content--container | flow">
+            <h2 class="card__title">Quote</h2>
+            <p class="card__description">
+              Quotes are the windows to the minds of the greatest thinkers and dreamers.
+            </p>
+          </div>
+          <button class="card__button"><a href="quote.html">Read more</a></button>
+        </div>
+      </article>
+          
+      
+  </div>
+
+    <!-- Add more sections for other features -->
+<br>
+<br>
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                  <div class="col" id="company">
+                      <img src="/images/logo.png" alt="" class="logo">
+                      <p>
+                        "Our web portal is a response to the challenges posed by the COVID-19 pandemic, providing solutions to the diverse problems it has brought about. With a focus on empowering students, women, and individuals from all walks of life and guidance is provided to enhance their skills, well-being, and knowledge through our web portal."
+                      </p>
+                      
+                  </div>
+
+                  
+
+                  <div class="col" id="services">
+                     <h3>Services</h3>
+                     <div class="links">
+                        <a href="#">Illustration</a>
+                        <a href="#">Creatives</a>
+                        <a href="#">Poster Design</a>
+                        <a href="#">Card Design</a>
+                     </div>
+                  </div>
+
+                  <div class="col" id="useful-links">
+                     <h3>Links</h3>
+                     <div class="links">
+                        <a href="#">About</a>
+                        <a href="#">Services</a>
+                        <a href="#">Our Policy</a>
+                        <a href="#">Help</a>
+                     </div>
+                  </div>
+
+                  <div class="col" id="contact">
+                      <h3>Contact</h3>
+                      <div class="contact-details">
+                         <i class="fa fa-location"></i>
+                         <p>Vishwakarma Institute of Technology <br> Pune, Maharashtra</p>
+                      </div>
+                      <div class="contact-details">
+                         <i class="fa fa-phone"></i>
+                         <p>+91-89238749734</p>
+                      </div>
+                  </div>
+
+                  <div class="social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                  </div>
+            </div>
+
+        </div>
+     </footer>
+
+     <script>
+        window.addEventListener('scroll', function() {
+        var header = document.querySelector('.header');
+        var menu = document.querySelector('.menu');
+        var scrollPosition = window.scrollY;
+    
+        if (scrollPosition > 0) {
+            header.classList.add('fixed-header');
+            menu.classList.add('fixed-menu');
+        } else {
+            header.classList.remove('fixed-header');
+            menu.classList.remove('fixed-menu');
+        }
+    });
+    
+    </script>
+</body>
+</html>

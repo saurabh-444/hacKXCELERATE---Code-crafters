@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">  
+    <title>Dictionary Portal</title>
+    <link rel="stylesheet" href="/Styles/dictionary.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CDN Link for Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <style>
+      /* Reset some default browser styles */
+body, h1, h2, p {
+  margin-bottom: 4px;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+
+/* Style the header */
+.header {
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMhLNt1lSKPVrBb_11qTm9AE6KEiqvEeU1yzNQaeG539DyrjwsB04SeQQRp2Hv5JQ_cA&usqp=CAU') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 70px 0;
+  height: 40px;
+  border-bottom: #0c0606 solid 2px;
+}
+
+.poster {
+  text-align: center;
+  overflow: hidden;
+  background: url('https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c2xpZGUlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60') center/cover no-repeat;
+  height: 1800px; /* Adjust the height as needed */
+}
+
+.poster img {
+  display: none; /* Hide the img element */
+}
+
+.poster-1{
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.poster-1 img{
+  width: 100%;
+  height:400px;
+}
+
+/* Style the menu bar */
+.menu {
+
+  background-color: #14213d ;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  border-bottom: #0c0606 solid 2px;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
+.menu a {
+  text-decoration: none;
+  /* border-right: #0d169f solid 1px;
+  border-left: #0d169f solid 1px; */
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 20px;
+  display: block;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #CD7F32;
+}
+
+/* Style the poster image */
+.poster {
+  text-align: center;
+  overflow: hidden;
+}
+
+.poster img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+
+
+
+
+/* Style the footer */
+
+footer{
+  position: fixed;
+  bottom: 0;
+   background-color: #14213d ;
+   width: 100%;
+   /* min-height: 350px; */
+   /* padding: 3rem 1rem; */
+   border-top: #010406 solid;
+   padding-bottom: 20px;
+}
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.col{
+  min-width: 250px;
+  color:#f2f2f2f2;
+  font-family: poppins;
+  padding:0 2rem;
+}
+.col .logo{
+  width: 100px;
+  margin-bottom:25px;
+}
+.col h3{
+  color:#CD7F32;
+  margin-bottom: 20px;
+  position: relative;
+  cursor: pointer;
+}
+.col h3::after{
+  content: '';
+  height:3px;
+  width:0px;
+  background-color: #CD7F32;
+  position: absolute;
+  bottom: 0;
+  left:0;
+  transition: 0.3s ease;
+
+}
+.col h3:hover::after{
+  width:30px
+}
+
+.social{
+  align-items:end;
+}
+.social a i{
+  color:#CD7F32;
+  margin-top: 5px;
+  margin-left: 100px;
+  transition: 0.3s ease;
+  display: inline-block;
+}
+.social a i:hover{
+  transform: scale(1.5);
+  filter:grayscale(25);
+}
+
+.col .links a{
+  display: block;
+  text-decoration: none;
+  color:#f2f2f2;
+  margin-bottom: 5px;
+  position: relative;
+  transition: 0.3s ease;
+}
+.col .links a::before{
+  content:'';
+  height: 16px;
+  width:3px;
+  position: absolute;
+  top:5px;
+  left:-10px;
+  background-color: rgb(5, 3, 4);
+  transition: 0.5s ease;
+  opacity: 0;
+}
+.col .links a:hover::before{
+  opacity: 1;
+}
+.col .links a:hover{
+  transform: translateX(-8px);
+  color:#CD7F32;
+}
+.col .contact-details{
+  display: inline-flex;
+  justify-content: space-between;
+}
+.col .contact-details i{
+  margin-right:15px;
+}
+
+
+/********** Responsive Design ********/
+@media(max-width:900px)
+{
+.row{
+  flex-direction: column;
+}
+.col{
+  width: 100%;
+  text-align: left;
+  margin-bottom: 25px;
+}
+}
+@media(max-width:768px)
+{
+.row{
+  flex-direction: column;
+}
+.col{
+  width: 100%;
+  text-align: left;
+  margin-bottom: 20px;
+}
+}
+
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+body{
+
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  background: #fff; 
+}
+::selection{
+  color: #fff;
+  background: #14213d;
+}
+/* .wrapper{
+  width: 420px;
+  border-radius: 7px;
+  background: #fff;
+  padding: 25px 28px 45px;
+  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+} */
+.wrapper header{
+  font-size: 30px;
+  font-weight: 900;
+  text-align: center;
+}
+.wrapper .search{
+  position: relative;
+  max-width: 30%;
+  margin-left: 533px;
+}
+.search input{
+
+  height: 53px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 0 42px;
+  border: 1px solid #999;
+}
+.search input:focus{
+  padding: 0 41px;
+  border: 2px solid #4D59FB;
+}
+.search input::placeholder{
+  color: #B8B8B8;
+}
+.search :where(i, span){
+  position: absolute;
+  top: 50%;
+  color: #999;
+  transform: translateY(-50%);
+}
+.search i{
+  left: 18px;
+  pointer-events: none;
+  font-size: 16px;
+}
+.search input:focus ~ i{
+  color: #4D59FB;
+}
+.search span{
+  right: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  display: none;
+}
+.search input:valid ~ span{
+  display: block;
+}
+.wrapper .info-text{
+  font-size: 13px;
+  color: #9A9A9A;
+  max-width: 33%;
+  margin-left: 533px;
+}
+.wrapper.active .info-text{
+  display: none;
+}
+.info-text span{
+  font-weight: 500;
+}
+.wrapper ul{
+  height: 0;
+  opacity: 0;
+  margin-left: 470px;
+  padding-right: 1px;
+  overflow-y: hidden;
+  transition: all 0.2s ease;
+}
+.wrapper.active ul{
+  opacity: 1;
+  height: 303px;
+}
+.wrapper ul li{
+  display: flex;
+  list-style: none;
+  margin-bottom: 14px;
+  align-items: center;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #D9D9D9;
+  justify-content: space-between;
+}
+ul li:last-child{
+  margin-bottom: 0;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+ul .word p{
+  font-size: 22px;
+  font-weight: 500;
+}
+ul .word span{
+  font-size: 12px;
+  color: #989898;
+}
+ul .word i{
+  color: #999;
+  font-size: 15px;
+  cursor: pointer;
+}
+ul .content{
+  max-height: 215px;
+  overflow-y: auto;
+}
+ul .content::-webkit-scrollbar{
+  width: 0px;
+}
+.content li .details{
+  padding-left: 10px;
+  border-radius: 4px 0 0 4px;
+  border-left: 3px solid #4D59FB;
+}
+.content li p{
+  font-size: 17px;
+  font-weight: 500;
+}
+.content li span{
+  font-size: 15px;
+  color: #7E7E7E;
+}
+.content .synonyms .list{
+  display: flex;
+  flex-wrap: wrap;
+}
+.content .synonyms span{
+  cursor: pointer;
+  margin-right: 5px;
+  text-decoration: underline;
+}
+
+  </style>
+  
+  </head>
+  <body>
+
+    <header class="header">
+      <div class="header-content">
+          <h1>Welcome to HackXcelerate </h1>
+          <p>Your Comprehensive Support System</p>
+      </div>
+    </header>
+    <nav class="menu">
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="financial.html">Finance Guide</a></li>
+          <li><a href="student.html">Student Help</a></li>
+          <li><a href="women.html">Women Empowerment</a></li>
+          <li><a href="health.html">Health and Fitness</a></li>
+          <li><a href="other.html">Other</a></li>
+          <!-- Add more menu items as needed -->
+      </ul>
+  </nav>
+    <div class="wrapper">
+      <br><br><br>
+      <header>English Dictionary</header>
+      <br>
+      <div class="search">
+        <input type="text" placeholder="Search a word" required spellcheck="false">
+        <i class="fas fa-search"></i>
+        <span class="material-icons">close</span>
+      </div>
+      <p class="info-text">Type any existing word and press enter to get meaning, example, synonyms, etc.</p>
+      <ul>
+        <li class="word">
+          <div class="details">
+            <p>__</p>
+            <span>_ _</span>
+          </div>
+          
+        </li>
+        <div class="content">
+          <li class="meaning">
+            <div class="details">
+              <p>Meaning</p>
+              <span>___</span>
+            </div>
+          </li>
+          <li class="example">
+            <div class="details">
+              <p>Example</p>
+              <span>___</span>
+            </div>
+          </li>
+          <li class="synonyms">
+            <div class="details">
+              <p>Synonyms</p>
+              <div class="list"></div>
+            </div>
+          </li>
+        </div>
+      </ul>
+    </div>
+
+    <script src="/script/dictionary.js"></script>
+    <script>
+      const wrapper = document.querySelector(".wrapper"),
+searchInput = wrapper.querySelector("input"),
+volume = wrapper.querySelector(".word i"),
+infoText = wrapper.querySelector(".info-text"),
+synonyms = wrapper.querySelector(".synonyms .list"),
+removeIcon = wrapper.querySelector(".search span");
+let audio;
+
+function data(result, word){
+    if(result.title){
+        infoText.innerHTML = `Can't find the meaning of <span>"${word}"</span>. Please, try to search for another word.`;
+    }else{
+        wrapper.classList.add("active");
+        let definitions = result[0].meanings[0].definitions[0],
+        phontetics = `${result[0].meanings[0].partOfSpeech}  /${result[0].phonetics[0].text}/`;
+        document.querySelector(".word p").innerText = result[0].word;
+        document.querySelector(".word span").innerText = phontetics;
+        document.querySelector(".meaning span").innerText = definitions.definition;
+        document.querySelector(".example span").innerText = definitions.example;
+        audio = new Audio(result[0].phonetics[0].audio);
+
+        if(definitions.synonyms[0] == undefined){
+            synonyms.parentElement.style.display = "none";
+        }else{ 
+            synonyms.parentElement.style.display = "block";
+            synonyms.innerHTML = "";
+            for (let i = 0; i < 5; i++) {
+                let tag = `<span onclick="search('${definitions.synonyms[i]}')">${definitions.synonyms[i]},</span>`;
+                tag = i == 4 ? tag = `<span onclick="search('${definitions.synonyms[i]}')">${definitions.synonyms[4]}</span>` : tag;
+                synonyms.insertAdjacentHTML("beforeend", tag);
+            }
+        }
+    }
+}
+
+function search(word){
+    fetchApi(word);
+    searchInput.value = word;
+}
+
+function fetchApi(word){
+    wrapper.classList.remove("active");
+    infoText.style.color = "#000";
+    infoText.innerHTML = `Searching the meaning of <span>"${word}"</span>`;
+    let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+    fetch(url).then(response => response.json()).then(result => data(result, word)).catch(() =>{
+        infoText.innerHTML = `Can't find the meaning of <span>"${word}"</span>. Please, try to search for another word.`;
+    });
+}
+
+searchInput.addEventListener("keyup", e =>{
+    let word = e.target.value.replace(/\s+/g, ' ');
+    if(e.key == "Enter" && word){
+        fetchApi(word);
+    }
+});
+
+volume.addEventListener("click", ()=>{
+    volume.style.color = "#4D59FB";
+    audio.play();
+    setTimeout(() =>{
+        volume.style.color = "#999";
+    }, 800);
+});
+
+removeIcon.addEventListener("click", ()=>{
+    searchInput.value = "";
+    searchInput.focus();
+    wrapper.classList.remove("active");
+    infoText.style.color = "#9A9A9A";
+    infoText.innerHTML = "Type any existing word and press enter to get meaning, example, synonyms, etc.";
+});
+
+    </script>
+
+  </body>
+</html>

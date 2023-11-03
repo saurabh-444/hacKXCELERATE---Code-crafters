@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+    <link rel="stylesheet" href="/Styles/news.css">
+
+    <script>
+    window.addEventListener('scroll', function() {
+    var header = document.querySelector('.header');
+    var menu = document.querySelector('.menu');
+    var mini_menu = document.querySelector('.nav-links');
+    var scrollPosition = window.scrollY;
+ 
+    if (scrollPosition > 0) {
+        header.classList.add('fixed-header');
+        menu.classList.add('fixed-menu');
+        mini_menu.classList.add('fixed-menu');
+
+    } else {
+        header.classList.remove('fixed-header');
+        menu.classList.remove('fixed-menu');
+        mini_menu.classList.remove('fixed-menu');
+    }
+});
+
+    </script>
+
+    <style>
+        /* Reset some default browser styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.fixed-menu {
+    position: fixed;
+    top: 114px; /* Adjust this value to match your header's height */
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+    
+
+/* Style the header */
+.header {
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMhLNt1lSKPVrBb_11qTm9AE6KEiqvEeU1yzNQaeG539DyrjwsB04SeQQRp2Hv5JQ_cA&usqp=CAU') center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+  
+    border-bottom: #0c0606 solid 2px;
+   
+    height: auto;
+}
+
+.poster {
+    text-align: center;
+    overflow: hidden;
+    background: url('https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c2xpZGUlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60') center/cover no-repeat;
+    height: 1800px; /* Adjust the height as needed */
+}
+
+.poster img {
+    display: none; /* Hide the img element */
+}
+
+.poster-1{
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+.poster-1 img{
+    width: 100%;
+    height: 400px;
+}
+
+/* Style the menu bar */
+.menu {
+    background-color: #14213d;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: #0c0606 solid 2px;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.menu a {
+    text-decoration: none;
+    /* border-right: #0d169f solid 1px;
+    border-left: #0d169f solid 1px; */
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #010406;
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-text-color: #fff;  
+    --secondary-text-color: #4e5e80;
+    --accent-color: #CD7F32; 
+    --accent-color-dark: #1d69a3;
+} 
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: #CD7F32;
+}
+
+h7 {
+    font-family: "Roboto", sans-serif;
+    color: black;
+    line-height: 1.4rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1180px;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+nav {
+    background-color: black ;
+    box-shadow: 0 0 4px #bbd0e2;
+    position: relative;
+    top: 0;
+    z-index: 99;
+    left: 0;
+    right: 0;
+}
+
+.main-nav {
+    justify-content: space-between;
+    padding-block: 8px;
+}
+
+.company-logo img {
+    width: 120px;
+}
+
+.nav-links ul {
+    gap: 16px;
+}
+
+.hover-link {
+    cursor: pointer;
+}
+
+.hover-link:hover {
+    color: var(--secondary-text-color);
+}
+
+.hover-link:active {
+    color: red;
+}
+
+.nav-item.active {
+    color: var(--accent-color);
+}
+
+.search-bar {
+    height: 32px;
+    gap: 8px;
+}
+
+.news-input {
+    width: 200px;
+    height: 100%;
+    padding-inline: 12px;
+    border-radius: 4px;
+    border: 2px solid #bbd0e2;
+    font-family: "Roboto", sans-serif;
+}
+
+.search-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+}
+
+.search-button:hover {
+    background-color: var(--accent-color-dark);
+}
+
+main {
+    padding-block: 20px;
+    margin-top: 80px;
+}
+
+.cards-container {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    align-items: start;
+}
+
+.card {
+    width: 360px;
+    min-height: 400px;
+    box-shadow: 0 0 4px #d4ecff;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 1px 1px 8px #d4ecff;
+    background-color: #f9fdff;
+    transform: translateY(-2px);
+}
+
+.card-header img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 12px;
+}
+ 
+.news-source { 
+    margin-block: 12px;
+}
+
+#n{
+    border: #fff solid;
+    display: inline;
+    top: 5%;
+    background-color: #fff;
+    padding-left: 600px;
+    margin: 1.2rem 0;
+    align-items: stretch;
+}
+</style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Welcome to HackXcelerate </h1>
+            <p>Your Comprehensive Support System</p>
+        </div>
+      </header>
+      <nav class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="financial.html">Finance Guide</a></li>
+            <li><a href="student.html">Student Help</a></li>
+            <li><a href="women.html">Women Empowerment</a></li>
+            <li><a href="health.html">Health and Fitness</a></li>
+            <li><a href="other.html">Other</a></li>
+            <!-- Add more menu items as needed -->
+        </ul>
+    </nav>
+ 
+
+
+    <nav>
+        <div class="main-nav container flex">
+            <div class="nav-links">
+                <ul class="flex">
+                    <li class="hover-link nav-item" id="sports" onclick="onNavItemClick('sports')">Sports</li>
+                    <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
+                    <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
+                    <li class="hover-link nav-item" id="education" onclick="onNavItemClick('education')">Education</li>
+                    <li class="hover-link nav-item" id="entertainment" onclick="onNavItemClick('entertainment')">Entertainment</li>
+                </ul>
+            </div>
+            <div class="search-bar flex">
+                <input id="search-text" type="text" class="news-input" placeholder="e.g. Science">
+                <button id="search-button" class="search-button">Search</button>
+            </div>
+        </div>
+    </nav>
+    
+
+    <main>
+        <div class="cards-container container flex" id="cards-container">
+            
+        </div>
+    </main>
+
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
+            </div>
+            <div class="card-content">
+                <h3 id="news-title">This is the Title</h3>
+                <h6 class="news-source" id="news-source">End Gadget 26/08/2023</h6>
+                <h7 class="news-desc" id="news-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae saepe quis voluptatum quisquam vitae doloremque facilis molestias quae ratione cumque!</h7>
+            </div>
+        </div>
+    </template>
+    <script src="/script/news.js"></script>
+
+    <script>
+        const API_KEY = "c9a5dd01e6b94fab83467a504422ef76";
+const url = "https://newsapi.org/v2/everything?q=";
+
+window.addEventListener("load", () => fetchNews("India"));
+
+function reload() {
+    window.location.reload();
+} 
+
+async function fetchNews(query) {
+    const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
+    const data = await res.json();
+    bindData(data.articles);
+} 
+ 
+function bindData(articles) {
+    const cardsContainer = document.getElementById("cards-container");
+    const newsCardTemplate = document.getElementById("template-news-card");
+
+    cardsContainer.innerHTML = ""; 
+
+    articles.forEach((article) => {
+        if (!article.urlToImage) return;
+        const cardClone = newsCardTemplate.content.cloneNode(true);
+        fillDataInCard(cardClone, article);
+        cardsContainer.appendChild(cardClone);
+    });
+}
+
+function fillDataInCard(cardClone, article) {
+    const newsImg = cardClone.querySelector("#news-img");
+    const newsTitle = cardClone.querySelector("#news-title");
+    const newsSource = cardClone.querySelector("#news-source");
+    const newsDesc = cardClone.querySelector("#news-desc");
+
+    newsImg.src = article.urlToImage;
+    newsTitle.innerHTML = article.title;
+    newsDesc.innerHTML = article.description;
+
+    const date = new Date(article.publishedAt).toLocaleString("en-US", {
+        timeZone: "Asia/Jakarta",
+    });
+
+    newsSource.innerHTML = `${article.source.name} · ${date}`;
+
+    cardClone.firstElementChild.addEventListener("click", () => {
+        window.open(article.url, "_blank");
+    });
+}
+
+let curSelectedNav = null;
+function onNavItemClick(id) {
+    fetchNews(id);
+    const navItem = document.getElementById(id);
+    curSelectedNav?.classList.remove("active");
+    curSelectedNav = navItem;
+    curSelectedNav.classList.add("active");
+}
+
+const searchButton = document.getElementById("search-button");
+const searchText = document.getElementById("search-text");
+
+searchButton.addEventListener("click", () => {
+    const query = searchText.value;
+    if (!query) return;
+    fetchNews(query);
+    curSelectedNav?.classList.remove("active");
+    curSelectedNav = null;
+});
+    </script>
+</body>
+</html> 

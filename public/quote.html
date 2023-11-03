@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Quote Generator</title>
+    
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .wrapper {
+    width: 400px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+  .container {
+    
+    width: 100%;
+    background-color: #070c18;
+    padding: 50px 40px;
+    box-shadow: 0 20px 65px rgba(87, 11, 16, 0.5);
+    position: absolute;
+    border-radius: 8px;
+    text-align: center;
+  }
+  .container:after {
+    
+    position: absolute;
+    width: 80%;
+    height: 120%;
+    background-color: #ffffff;
+    z-index: -1;
+    top: -10%;
+    left: 10%;
+  }
+  .container p {
+    color: #fdd8d8;
+    line-height: 2;
+    font-size: px;
+  }
+  .container h3 {
+    color: #ffffff;
+    margin: 20px 0 60px 0;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  .container button {
+    background-color: #CD7F32;
+    border: none;
+    padding: 15px 45px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #14213d;
+    cursor: pointer;
+  }
+
+  body, h1, h2, p {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    
+        
+    
+    /* Style the header */
+    .header {
+        background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMhLNt1lSKPVrBb_11qTm9AE6KEiqvEeU1yzNQaeG539DyrjwsB04SeQQRp2Hv5JQ_cA&usqp=CAU') center/cover no-repeat;
+        color: #fff;
+        text-align: center;
+        padding: 50px 0;
+      
+        border-bottom: #0c0606 solid 2px;
+       
+        height: auto;
+    }
+    
+    .poster {
+        text-align: center;
+        overflow: hidden;
+        background: url('https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c2xpZGUlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60') center/cover no-repeat;
+        height: 1800px; /* Adjust the height as needed */
+    }
+    
+    .poster img {
+        display: none; /* Hide the img element */
+    }
+    
+    .poster-1{
+        text-align: center;
+        overflow: hidden;
+        width: 100%;
+    }
+    
+    .poster-1 img{
+        width: 100%;
+        height: 400px;
+    }
+    
+    /* Style the menu bar */
+    .menu {
+        background-color: #14213d;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+        border-bottom: #0c0606 solid 2px;
+    }
+    
+    .menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    
+    
+    .menu a {
+        text-decoration: none;
+        /* border-right: #0d169f solid 1px;
+        border-left: #0d169f solid 1px; */
+        color: #fff;
+        font-weight: bold;
+        padding: 10px 20px;
+        display: block;
+        transition: color 0.3s;
+    }
+    
+    .menu a:hover {
+        color: #010406;
+    }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Welcome to HackXcelerate </h1>
+            <p>Your Comprehensive Support System</p>
+        </div>
+      </header>
+      <nav class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="financial.html">Finance Guide</a></li>
+            <li><a href="student.html">Student Help</a></li>
+            <li><a href="women.html">Women Empowerment</a></li>
+            <li><a href="health.html">Health and Fitness</a></li>
+            <li><a href="other.html">Other</a></li>
+            <!-- Add more menu items as needed -->
+        </ul>
+    </nav>
+    <div class="wrapper">
+      <div class="container">
+        <p id="quote">
+          
+        </p>
+        <h3 id="author">Lorem, ipsum.</h3>
+        <button id="btn">Get Quote</button>
+      </div>
+    </div>
+    <!-- Script -->
+    <script>
+        let quote = document.getElementById("quote");
+let author = document.getElementById("author");
+let btn = document.getElementById("btn");
+
+const url = "https://api.quotable.io/random";
+
+let getQuote = () => {
+  fetch(url)
+    .then((data) => data.json())
+    .then((item) => {
+      quote.innerText = item.content;
+      author.innerText = item.author;
+    });
+};
+
+window.addEventListener("load", getQuote);
+btn.addEventListener("click", getQuote);
+    </script>
+  </body>
+</html>

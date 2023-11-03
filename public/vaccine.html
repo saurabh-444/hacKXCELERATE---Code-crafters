@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" class="w-full h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccine Slot Availability Notifier</title>
+
+    <!--Tailwind CSS CDN-->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="/Styles/vaccine.css">
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HackXcelerate</title>
+        <link rel="stylesheet" href="/Styles/vaccine.css"> <!-- Link to your CSS file for styling -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <style>
+        /* Reset some default browser styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-style: 'roboto',sans-serif;
+    
+}
+
+
+
+
+/* Style the header */
+.header {
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMhLNt1lSKPVrBb_11qTm9AE6KEiqvEeU1yzNQaeG539DyrjwsB04SeQQRp2Hv5JQ_cA&usqp=CAU') center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+    font-weight: 900;
+    
+    border-bottom: #0c0606 solid 2px;
+   
+    height: auto;
+}
+
+h1{
+    font-size: 30px;
+}
+
+
+.poster {
+    text-align: center;
+    overflow: hidden;
+    background: url('https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c2xpZGUlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60') center/cover no-repeat;
+    height: 1800px; /* Adjust the height as needed */
+}
+
+.poster img {
+    display: none; /* Hide the img element */
+}
+
+.poster-1{
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+.poster-1 img{
+    width: 100%;
+    height: 400px;
+}
+
+/* Style the menu bar */
+.menu {
+    background-color: #14213d ;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: #0c0606 solid 2px;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.menu a {
+    text-decoration: none;
+    /* border-right: #0d169f solid 1px;
+    border-left: #0d169f solid 1px; */
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #010406;
+}
+
+/* Style the poster image */
+.poster {
+    text-align: center;
+    overflow: hidden;
+}
+
+.poster img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+
+:root {
+    --colors: #3870ff;
+}
+
+* {
+    font-family: 'roboto', sans-serif;
+}
+
+#info-main {
+    height: 40px;
+}
+
+#info {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--colors);
+    border-radius: 50%;
+    font-size: 20px;
+    transition: background-color 0.3s linear;
+}
+
+#info p {
+    font-family: 'Niconne', cursive;
+    font-size: 40px;
+}
+
+#info:hover {
+    background-color: #02dac5;
+}
+
+#modal {
+    z-index: 10000000;
+}
+
+.modal-background {
+    background-color: black;
+    opacity: 0.9;
+}
+
+#modal-menu-container {
+    background-color: #0b2942;
+    margin: auto;
+    color: white;
+}
+
+#close {
+    height: 60px;
+    width: 60px;
+    right: 1%;
+    top: 1%;
+}
+
+#close span {
+    display: block;
+    width: 35px;
+    height: 4px;
+    position: absolute;
+    background-color: #02dac5;
+    border-radius: 3px;
+    top: 48%;
+    left: 23%;
+    transform: translate(-50%, -50%);
+}
+
+#close span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+#close span:nth-child(2) {
+    transform: rotate(135deg);
+}
+
+.modal-a {
+    color: green;
+}
+
+.container {
+display: flex;
+align-items: center;
+position: absolute;
+margin-left: 350px;
+}
+
+input[type=text] {
+    border-bottom: 2px solid var(--colors);
+}
+
+input[type=text]:focus {
+    outline: none;
+}
+
+.state-select {
+    border: none;
+    border-bottom: 2px solid var(--colors);
+}
+
+select:focus {
+    outline: none;
+}
+
+input[type=date] {
+    border: 2px solid var(--colors);
+}
+
+button {
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #14213d;
+    color: white;
+    transition: background-color 0.3s linear;
+}
+
+button:hover {
+    background-color: #02dac5;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:disabled {
+    background-color: #CD7F32;
+    cursor: default;
+}
+
+input[type=date]:disabled {
+    border-color: #CD7F32;
+    color: #CD7F32;
+}
+
+input[type=text]:disabled {
+    color: gray;
+}
+
+input[type=radio]:disabled + span {
+    color: gray;
+}
+
+.me {
+    height: 50px;
+}
+
+.me a {
+    color: red;
+}
+
+
+
+
+</style>
+</head>
+<body class="w-full h-full">
+    <header class="header">
+        <div class="header-content">
+            <h1 style="font-size: 28px;">Welcome to HackXcelerate </h1>
+            <p>Your Comprehensive Support System</p>
+        </div>
+      </header>
+      <nav class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="financial.html">Finance Guide</a></li>
+            <li><a href="student.html">Student Help</a></li>
+            <li><a href="women.html">Women Empowerment</a></li>
+            <li><a href="health.html">Health and Fitness</a></li>
+            <li><a href="other.html">Other</a></li>
+            <!-- Add more menu items as needed -->
+        </ul>
+    </nav>
+    
+    <div class="relative w-full h-full">
+        <div class="container relative w-6/12 flex justify-center flex-wrap">
+            <h1 class="text-3xl p-8">Vaccine Slot Availability Notifier</h1>
+            <div class="tg relative w-full p-4 flex justify-center flex-wrap">
+                <p class="w-8/12 text-xs text-left pb-1">Telegram Username</p><br>
+                <input type="text" id="username" class="w-8/12" placeholder="CallMeBot_txtbot">
+            </div>
+        
+            <div class="state relative w-full p-4 flex justify-center flex-wrap">
+                <p class="w-8/12 text-xs text-left pb-1">State</p>
+                <div class="w-8/12 state-select relative">
+                    <select name="state" id="states" class="w-full"></select>
+                </div>
+            </div>
+        
+            <div class="district relative w-full p-4 flex justify-center flex-wrap">
+                <p class="w-8/12 text-xs text-left pb-1">District</p>
+                <div class="w-8/12 state-select relative">
+                    <select name="district" id="districts" class="w-full"></select>
+                </div>
+            </div>
+
+            <div class="ages relative w-full p-4 flex justify-center flex-wrap">
+                <p class="w-8/12 text-xs text-left pb-1">Age<p>
+                <div class="w-8/12 flex justify-around">
+                    <div>
+                        <input type="radio" name="age" value="0" checked="checked"><span class="pl-1">Any</span>
+                    </div>
+                    <div>
+                        <input type="radio" name="age" value="18"><span class="pl-1">18-44</span>
+                    </div>
+                    <div>
+                        <input type="radio" name="age" value="45"><span class="pl-1">45+</span>
+                    </div>
+                </div>
+            </div>
+         
+            <div class="dates relative w-full p-4 flex justify-center flex-wrap">
+                <p class="w-8/12 text-xs text-left pb-1">Date</p>
+                <div class="date-select w-8/12 flex justify-center">
+                    <input type="date" id="date" name="date">
+                </div>
+            </div>
+
+            <div class="buttons relative w-8/12 p-4 flex justify-around flex-wrap pb-10">
+                <button id="search" class="">Start</button>
+                <button id="stop" class="" disabled="false">Stop</button>
+            </div>
+        </div>
+    </div>
+
+
+   
+</body>
+</html>

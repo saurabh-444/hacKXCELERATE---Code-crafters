@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords"  />
+<meta name="robots" content="index" />
+    <title>BMR Calculator</title>
+    <link rel="stylesheet" href="/Styles/bmr.css" />
+    <link rel="stylesheet" href="/Styles/bmi.css" />
+    <link rel="stylesheet" href="/Styles/fitness.css">
+
+    <style>
+      .fixed-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+    }
+    
+    .fixed-menu {
+        position: fixed;
+        top: 96px; /* Adjust this value to match your header's height */
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+    }
+ 
+    </style>
+        <script>
+          window.addEventListener('scroll', function() {
+          var header = document.querySelector('.header');
+          var menu = document.querySelector('.menu');
+          var scrollPosition = window.scrollY;
+      
+          if (scrollPosition > 0) {
+              header.classList.add('fixed-header');
+              menu.classList.add('fixed-menu');
+          } else {
+              header.classList.remove('fixed-header');
+              menu.classList.remove('fixed-menu');
+          }
+      });
+      
+      </script>
+  </head>
+  <body>
+  
+    <header class="header">
+      <div class="header-content">
+          <h1>Welcome to HackXcelerate </h1>
+          <p>Your Comprehensive Support System</p>
+      </div>
+    </header>
+    <nav class="menu">
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="financial.html">Finance Guide</a></li>
+          <li><a href="student.html">Student Help</a></li>
+          <li><a href="women.html">Women Empowerment</a></li>
+          <li><a href="health.html">Health and Fitness</a></li>
+          <li><a href="other.html">Other</a></li>
+          <!-- Add more menu items as needed -->
+      </ul>
+  </nav>
+    
+  <div class="container">
+    
+    <h1 class="sect1" id="ex-h1">BMR Calculator</h1>
+    <h2 class="sect2bmi">BMR Calculator</h2>
+  </div>
+    <div class="bmr-calculator">
+      <h2>BMR Calculator</h2>
+      <div class="controls">
+        <form>
+          <h3>Age (10 - 100)</h3>
+          <input type="text" id="age" value="28" />
+
+          <div class="gender">
+            <h3>Gender</h3>
+            <input type="radio" id="male" value="male" name="gender" checked />
+            <label for="male">Male</label>
+            <input type="radio" id="female" value="female" name="gender" />
+            <label for="female">Female</label>
+          </div>
+
+          <div class="height">
+            <h3>Height</h3>
+            <input type="text" id="height" value="180" />
+            <div class="unit">cm</div>
+          </div>
+
+          <div class="weight">
+            <h3>Weight</h3>
+            <input type="text" id="weight" value="65" />
+            <div class="unit">kg</div>
+          </div>
+        </form>
+      </div>
+
+      <div class="result">
+        <button class="calculate-btn">Calculate</button>
+
+        <div class="result-message">
+          <span class="calories">1,640</span> Calories/day
+        </div>
+
+        <div class="error-message">
+          <p>Please enter all the details correctly.</p>
+        </div>
+        
+      </div>
+    </div>
+    <br><br><br><br><br><br>
+    
+
+    <script src="/script/bmr.js"></script>
+    <script src="/script/fitness.js"></script>
+  </body>
+</html>
