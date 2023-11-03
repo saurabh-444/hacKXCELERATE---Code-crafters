@@ -1,0 +1,516 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #FFFAFB; 
+  font-family: "Roboto", sans-serif;
+  line-height: var(--line-height);
+  padding: 0.5em 0.5em 2em 0.5em;
+  margin: 0;
+  display: block;
+}
+  
+
+  .container1{
+    display: grid;
+    justify-content: center;
+    position: absolute;
+    top: 36%;
+    left: 36%;  }
+
+.box {
+  width: 500px;
+  /* background: #fafafa; */
+  border-radius: 12px;
+  text-align: center;
+
+}
+
+
+.bmi-h1 {
+  color: rgb(0, 0, 0, 0.7);
+  font-weight: bold;
+  font-size: 18px;
+  padding: 30px 0;
+
+}
+
+.sect2bmi{
+  font-size: 18px;
+  font-weight: 700;
+
+  transform: translate(139px, -78px);
+}
+
+
+.sect2bmi:before{
+  content: '';
+  position: absolute;
+  width: 70px;
+  height: 4px;
+  right: 45.8%;
+  top: 83%;
+  background: rgb(255, 32, 32);
+}
+
+
+.content {
+  padding: 0 30px;
+
+}
+
+.input {
+  background: #fff;
+  box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+
+.input label {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.input input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #CD7F32;
+  width: 50%;
+  text-align: center;
+  font-size: 28px;
+  font-family: "Nunito", sans-serif;
+}
+
+
+
+.inputW {
+  background: #fff;
+  box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+
+.inputW label {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.inputW input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #CD7F32;
+  width: 50%;
+  text-align: center;
+  font-size: 28px;
+  font-family: "Nunito", sans-serif;
+}
+
+.inputH {
+  background: #fff;
+  box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+
+.inputH label {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.inputH input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #CD7F32;
+  width: 50%;
+  text-align: center;
+  font-size: 28px;
+  font-family: "Nunito", sans-serif;
+}
+
+
+button.calculate {
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  color: #fff;
+  background: #CD7F32;
+  font-size: 16px;
+  border-radius: 7px;
+  padding: 12px 0;
+  width: 100%;
+  outline: none;
+  border: none;
+  transition: all 0.5s;
+}
+
+button.calculate:hover {
+  background: #14213d ;
+}
+
+
+
+.result {
+  padding: 10px 20px;
+}
+
+.result p {
+  font-weight: 600;
+  font-size: 22px;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.result #result {
+  font-size: 36px;
+  font-weight: 900;
+  color: #14213d ;
+  background-color: #eaeaea;
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 55px;
+  margin-bottom: 25px;
+}
+
+#comment {
+  color: #14213d ;
+  font-weight: 800;
+}
+
+.comment {
+  display: none;
+  border: dashed 1px;
+  border-radius: 7px;
+  padding: 5px;
+}
+
+
+
+
+.gender {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  background: #fff;
+  box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+/* Style for Radio */
+.gender .container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  /* margin-bottom: 12px; */
+  margin-top: 7px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.gender .container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.gender .container:hover input~.checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.gender .container input:checked~.checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.gender .container input:checked~.checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.gender .container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+/* END Style for Radio */
+
+.containerHW {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  padding-top: 300px;
+
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 600px;
+  border-radius: 10px;
+  box-shadow: #393c76 -1px 2px 2px 1px;
+}
+
+#modalText {
+  padding-top: 8px;
+  padding-right: 5px;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(24, 23, 23);
+}
+
+
+.modal-correct {
+  border: 2px solid green;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.close:hover {
+  color: #d41111;
+}
+
+
+
+
+
+.linkDownload {
+  position: fixed;
+  background-color: #d12322;
+  margin: 20px;
+  padding: 10px 10px;
+  left: -0px;
+  border-radius: 5px;
+  bottom: -0px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.43s ease-in-out;
+
+
+}
+
+
+.linkDownload i {
+  padding-left: 7px;
+}
+
+.linkDownload:hover {
+  text-decoration: none;
+  background-color: black;
+}
+
+
+@media (max-width: 700px) {
+
+
+  .box {
+    width: 380px;
+  }
+
+
+
+
+  .input label {
+
+    font-size: 18px;
+  }
+
+  .inputH label,
+  .inputW label {
+    font-size: 14px;
+  }
+
+
+  .input input,
+  .inputH input,
+  .inputW input {
+    font-size: 24px;
+  }
+
+
+  .modal-content {
+
+    width: 380px;
+  }
+
+
+
+}
+
+  /* Reset some default browser styles */
+            body, h1, h2, p {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+              
+          }
+          h1{
+            font-size: 30px;
+          }
+          h2{
+            font-size: 25px;
+          }
+
+          
+          /* Style the header */
+          .header {
+              background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMhLNt1lSKPVrBb_11qTm9AE6KEiqvEeU1yzNQaeG539DyrjwsB04SeQQRp2Hv5JQ_cA&usqp=CAU') center/cover no-repeat;
+              color: #fff;
+              text-align: center;
+              padding: 50px 0;
+              font-weight: 900;
+              
+             
+              height: auto;
+          }
+          
+          .poster {
+              text-align: center;
+              overflow: hidden;
+              background: url('https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c2xpZGUlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60') center/cover no-repeat;
+              height: 1800px; /* Adjust the height as needed */
+          }
+          
+          .poster img {
+              display: none; /* Hide the img element */
+          }
+          
+          .poster-1{
+              text-align: center;
+              overflow: hidden;
+              width: 100%;
+          }
+          
+          .poster-1 img{
+              width: 100%;
+              height: 400px;
+          }
+          
+          /* Style the menu bar */
+          .menu {
+              background-color: #14213d;
+              color: #fff;
+              padding: 10px 0;
+              text-align: center;
+              border-bottom: #0c0606 solid 2px;
+              
+          }
+          
+          .menu ul {
+              list-style-type: none;
+              padding: 0;
+              margin: 0;
+              display: flex;
+              justify-content: space-around;
+          }
+          
+          
+          
+          .menu a {
+              text-decoration: none;
+              /* border-right: #0d169f solid 1px;
+              border-left: #0d169f solid 1px; */
+              color: #fff;
+              font-weight: bold;
+              padding: 10px 20px;
+              display: block;
+              transition: color 0.3s;
+          }
+          
+          .menu a:hover {
+              color: #010406;
+          }
